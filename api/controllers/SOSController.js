@@ -58,7 +58,7 @@ module.exports = {
             console.log("worked");
             if (user.longitude === sos.longitude) {
               console.log("inside if");
-              Mailer.sendWelcomeMail(user);
+              //Mailer.sendWelcomeMail(user);
             }
           });
           res.status(200).json(users);

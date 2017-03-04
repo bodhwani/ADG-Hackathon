@@ -5,5 +5,5 @@ module.exports.email = {
     pass: "premjaya",
   },
   templateDir: "api/emailTemplates",
-  testMode: false 
+  testMode: false
 };
