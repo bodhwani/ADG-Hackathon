@@ -8,23 +8,8 @@
 module.exports = {
 
   create : function(req, res, next) {
+
     console.log("Entered into user controller");
-
-    if (!req.param('email') || !req.param('name') || !req.param('regno') || !req.param('phone')  || !req.param('hackerrank')) {
-      var fieldsRequiredError = {
-        name: 'usernamePasswordRequired',
-        message: 'You must enter email.'
-      };
-
-      console.log('Fiels enter na');
-
-      req.session.flash = {
-        err1: fieldsRequiredError,
-      };
-      res.status(200).json(fieldsRequiredError);
-      return
-    }
-
 
     User.create(req.params.all(), function userCreated(err, user) {
       if (err) {
@@ -35,6 +20,7 @@ module.exports = {
           err: err
         };
         res.status(200).json(err);
+        return;
       }
 
       req.session.authenticated = true;
