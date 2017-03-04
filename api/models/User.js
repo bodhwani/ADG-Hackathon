@@ -26,6 +26,16 @@ module.exports = {
       required : false
     },
 
+    date : {
+      type : 'string',
+      required : false
+    },
+
+    length : {
+      type : 'string',
+      required : false
+    },
+
     toJSON: function() {
       var obj = this.toObject();
       delete obj._csrf;

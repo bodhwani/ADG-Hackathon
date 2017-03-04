@@ -27,7 +27,7 @@ module.exports = {
     },
 
     date  : {
-      type : 'date',
+      type : 'string',
       required : false
     },
 
