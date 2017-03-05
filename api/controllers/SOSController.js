@@ -56,9 +56,7 @@ module.exports = {
                     valuesuser = (user.time).split(":");
                     valuesdsos = (sos.date).split("-");
                     valuesduser = (user.date).split("-");
-                    if(!user) {
-                      res.status(200).json("No user");
-                    }
+
                     console.log("Here is my code of calculating");
 
                     t1 = parseFloat(valuessos[0]);
@@ -76,25 +74,20 @@ module.exports = {
                                   console.log("t2 is greater than u2-15");
                                   if (user.longitude === sos.longitude) {
                                     console.log("help needed");
-                                    //res.status(200).json(user);
-                                    res.status(200).json("found");
-
                                     Mailer.sendWelcomeMail(user);
+                                    // res.status(200).json(user);
+                                    // return;
                                   }
                                 }
 
                               }
                               else {
                                 Mailer.sendWelcomeMail(user);
-                                res.status(200).json("Not found");
-
                                 console.log("No help needed");
                               }
 
 
                   });
-          res.status(200).json(users);
-          return;
         });
 
         //Mailer.sendWelcomeMail(user);

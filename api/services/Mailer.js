@@ -4,12 +4,12 @@ module.exports.sendWelcomeMail = function(obj) {
 
   console.log("Successfully reached");
 
-  console.log(obj.name);
+  console.log(obj.email);
 
   sails.hooks.email.send(
     "welcomeEmail",
     {
-      Name: obj.name,
+      Name: obj.email,
     },
     {
       to: obj.email,
