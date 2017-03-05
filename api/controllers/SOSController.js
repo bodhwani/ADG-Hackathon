@@ -4,6 +4,7 @@
  * @description :: Server-side logic for managing SOS
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
+
 var request = require('request');
 var t1,u1,ds;
 var t2,u2,du;
