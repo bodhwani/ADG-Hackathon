@@ -77,6 +77,8 @@ module.exports = {
                                   if (user.longitude === sos.longitude) {
                                     console.log("help needed");
                                     //res.status(200).json(user);
+                                    res.status(200).json("found");
+
                                     Mailer.sendWelcomeMail(user);
                                   }
                                 }
@@ -84,6 +86,8 @@ module.exports = {
                               }
                               else {
                                 Mailer.sendWelcomeMail(user);
+                                res.status(200).json("Not found");
+
                                 console.log("No help needed");
                               }
 
