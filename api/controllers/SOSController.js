@@ -38,58 +38,61 @@ module.exports = {
 
         console.log('Thankyou');
 
-        User.find(function foundUsers(err, users) {
-                  if (err) return next(err);
-                  //console.log(users);
-                  //res.status(200).json(users);
 
 
-                  users.forEach(function (user) {
-                    //console.log(user);
-                    console.log("inside users foreach");
-                    valuessos = (sos.time).split(":");
-                    valuesuser = (user.time).split(":");
-                    valuesdsos = (sos.date).split("-");
-                    valuesduser = (user.date).split("-");
-                    if(user) {
-                      console.log(user);
-                    }
-                    console.log("Here is my code of calculating");
-
-                    t1 = parseFloat(valuessos[0]);
-                              t2 = parseFloat(valuessos[1]);
-                              u1 = parseFloat(valuesuser[0]);
-                              u2 = parseFloat(valuesuser[1]);
-                              ds = parseFloat(valuesdsos[2]);
-                              du = parseFloat(valuesduser[2]);
-                              console.log("u2-15 is ", u2 - 15);
-                              console.log("t2 is ", t2);
-                              console.log("u2+15 is ", u2 + 15);
-
-                              if (du == ds) {
-                                if (u2 - 10 < t2 && t2 < u2 + 10) {
-                                  console.log("t2 is greater than u2-15");
-                                  if (user.longitude === sos.longitude) {
-                                    console.log("help needed");
-                                    //res.status(200).json(user);
-                                    //Mailer.sendWelcomeMail(user);
-                                  }
-                                }
-
-                              }
-                              else {
-
-                                console.log("No help needed");
-                              }
-
-
-                  });
-          res.status(200).json(users);
-          return;
-        });
+        // User.find(function foundUsers(err, users) {
+        //           if (err) return next(err);
+        //           //console.log(users);
+        //           //res.status(200).json(users);
+        //
+        //
+        //           users.forEach(function (user) {
+        //             //console.log(user);
+        //             console.log("inside users foreach");
+        //             valuessos = (sos.time).split(":");
+        //             valuesuser = (user.time).split(":");
+        //             valuesdsos = (sos.date).split("-");
+        //             valuesduser = (user.date).split("-");
+        //             if(!user) {
+        //               res.status(200).json("No user");
+        //             }
+        //             console.log("Here is my code of calculating");
+        //
+        //             t1 = parseFloat(valuessos[0]);
+        //                       t2 = parseFloat(valuessos[1]);
+        //                       u1 = parseFloat(valuesuser[0]);
+        //                       u2 = parseFloat(valuesuser[1]);
+        //                       ds = parseFloat(valuesdsos[2]);
+        //                       du = parseFloat(valuesduser[2]);
+        //                       console.log("u2-15 is ", u2 - 15);
+        //                       console.log("t2 is ", t2);
+        //                       console.log("u2+15 is ", u2 + 15);
+        //
+        //                       if (du == ds) {
+        //                         if (u2 - 10 < t2 && t2 < u2 + 10) {
+        //                           console.log("t2 is greater than u2-15");
+        //                           if (user.longitude === sos.longitude) {
+        //                             console.log("help needed");
+        //                             //res.status(200).json(user);
+        //                             Mailer.sendWelcomeMail(user);
+        //                           }
+        //                         }
+        //
+        //                       }
+        //                       else {
+        //
+        //                         console.log("No help needed");
+        //                       }
+        //
+        //
+        //           });
+        //   res.status(200).json(users);
+        //   return;
+        // });
 
         //Mailer.sendWelcomeMail(user);
 
+        res.status(200).json(sos);
       }
 
 
