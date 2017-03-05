@@ -71,18 +71,21 @@ module.exports = {
                                   console.log("t2 is greater than u2-15");
                                   if (user.longitude === sos.longitude) {
                                     console.log("help needed");
-                                    res.status(200).json(user);
+                                    //res.status(200).json(user);
                                     //Mailer.sendWelcomeMail(user);
                                   }
                                 }
 
                               }
                               else {
+
                                 console.log("No help needed");
                               }
 
 
                   });
+          res.status(200).json(users);
+          return;
         });
 
         //Mailer.sendWelcomeMail(user);
