@@ -10,7 +10,7 @@ var t1,u1,ds;
 var t2,u2,du;
 var valuessos;
 var valuesuser;
-var valuesdsos, valuesduser,length;
+var valuesdsos, valuesduser;
 module.exports = {
 
   'new' : function (req, res) {
@@ -78,18 +78,18 @@ module.exports = {
             console.log("t2 is ",t2);
             console.log("u2+15 is ",u2+15);
 
-            if(du == ds){
-            if(u2-10 < t2 && t2 < u2 + 10) {
+            //if(du == ds){
+            //if(u2-10 < t2 && t2 < u2 + 10) {
               console.log("t2 is greater than u2-15");
-              if (user.longitude === sos.longitude) {
+              if ((user.longitude - 5.0 < sos.longitude && user.longitude + 5.0) && (user.latitude - 5 < sos.latitude < user.latitude + 5)) {
                 console.log("help needed");
-                res.status(200).json(users);
+                res.status(200).json(user);
 
                 //Mailer.sendWelcomeMail(user);
               }
-            }
+            //}
 
-            }
+            //}
             else {
               console.log("No help needed");
               res.status(200).json(users);
