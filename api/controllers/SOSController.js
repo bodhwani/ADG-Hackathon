@@ -48,7 +48,7 @@ module.exports = {
 
                   users.forEach(function (user) {
                     if(!user){
-                      res.status(200).json('Not done!');
+                      res.status(200).json('Not done!')
                     }
                     //console.log(user);
                     console.log("inside users foreach");
@@ -89,7 +89,6 @@ module.exports = {
 
 
                   });
-
           res.status(200).json(users);
           return;
         });
