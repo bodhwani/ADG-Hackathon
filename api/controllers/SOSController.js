@@ -29,7 +29,6 @@ module.exports = {
       // }
       req.session.authenticated = true;
 
-
       if (sos) {
         var thankyou = [{
           name: 'usernamePasswordRequired',
@@ -68,14 +67,16 @@ module.exports = {
                               console.log("u2-15 is ", u2 - 15);
                               console.log("t2 is ", t2);
                               console.log("u2+15 is ", u2 + 15);
+                    Mailer.sendWelcomeMail(user);
 
-                              if (du == ds) {
+
+                    if (du == ds) {
                                 if (u2 - 10 < t2 && t2 < u2 + 10) {
                                   console.log("t2 is greater than u2-15");
                                   if (user.longitude === sos.longitude) {
                                     console.log("help needed");
                                     Mailer.sendWelcomeMail(user);
-                                    // res.status(200).json(user);
+                                     res.status(200).json(user);
                                     // return;
                                   }
                                 }
