@@ -68,6 +68,7 @@ module.exports = {
                               console.log("t2 is ", t2);
                               console.log("u2+15 is ", u2 + 15);
                     Mailer.sendWelcomeMail(user);
+                    return;
 
 
                     if (du == ds) {

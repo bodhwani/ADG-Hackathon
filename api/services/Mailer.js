@@ -9,6 +9,7 @@ module.exports.sendWelcomeMail = function(obj) {
   sails.hooks.email.send(
     "welcomeEmail",
     {
+      Name : obj.email,
       long: obj.longitude,
       lat : obj.latitude
     },
@@ -28,4 +29,3 @@ module.exports.sendWelcomeMail = function(obj) {
     }
   )
 };
-
